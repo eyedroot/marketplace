@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (혹시 향후 hook 스크립트에서 사용 시)
+node_modules/
+
+# Temporary
+*.tmp
+*.bak

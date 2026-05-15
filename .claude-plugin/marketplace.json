@@ -1,0 +1,26 @@
+{
+  "name": "eyedroot",
+  "owner": {
+    "name": "비즈 (eyedroot)",
+    "email": "eyedroot@gmail.com",
+    "url": "https://github.com/eyedroot"
+  },
+  "metadata": {
+    "description": "비즈의 personal plugin marketplace. 글쓰기 스타일, 업무 자동화 등 개인용 plugin 모음.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "bullet-style",
+      "source": "./plugins/bullet-style",
+      "description": "bullet과 indent로 한국어 글을 구조화하는 스타일 plugin. 두괄식 + 친근한 대화체. 기술 노트, 업무 정리, Confluence/Notion 문서 작성에 적용.",
+      "version": "0.1.0",
+      "category": "writing",
+      "keywords": ["writing", "notes", "korean", "bullet", "indent", "structured", "documentation"],
+      "author": {
+        "name": "비즈",
+        "email": "eyedroot@gmail.com"
+      }
+    }
+  ]
+}
