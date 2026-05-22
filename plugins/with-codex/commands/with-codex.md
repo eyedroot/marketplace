@@ -1,42 +1,42 @@
 ---
-description: Claude가 1차 처리하고 Codex로 교차 검증하는 듀얼 에이전트 워크플로우
-argument-hint: "<실행할 프롬프트>"
+description: Dual-agent workflow where Claude does the first pass and Codex cross-verifies
+argument-hint: "<prompt to execute>"
 allowed-tools: Read, Edit, Write, Glob, Grep, Bash, AskUserQuestion, Agent, Skill, TodoWrite
 ---
 
-Claude(1차)와 Codex(2차)가 협업하는 듀얼 검증 워크플로우다.
+A dual-verification workflow where Claude (primary) and Codex (secondary) collaborate.
 
-사용자 프롬프트:
+User prompt:
 $ARGUMENTS
 
-## 실행 절차
+## Execution flow
 
-1차 — Claude가 직접 작업/검수
-- 사용자 프롬프트를 평소처럼 수행한다.
-- 코드 작성, 수정, 분석, 검토 등 작업 성격에 맞게 진행한다.
+Primary pass — Claude does the work directly
+- Carry out the user prompt as usual.
+- Apply whatever fits the task: writing code, editing, analysis, review, etc.
 
-판단 분기 — 1차 완료 시점 또는 도중에 다음 중 하나를 선택한다:
+Branching — at the end of the primary pass (or mid-way), pick one:
 
-A. 애매하거나 막힌 부분이 있는 경우 → `/codex:rescue`
-- 트리거: 1차 진행 중 확신이 서지 않는 결정, 재현되지 않는 버그, 근거가 약한 가정, 대안 검토가 필요한 설계 선택 등에 부딪혔을 때.
-- 호출: `Skill(codex:rescue)`로 해당 지점의 컨텍스트(파일 경로, 라인, 의문점)를 명확히 전달해서 추가 조사를 위임한다.
-- Codex 결과를 1차 작업에 반영한 뒤 필요하면 단계 C로 진행한다.
+A. Stuck or uncertain → `/codex:rescue`
+- Trigger: a decision you can't justify, a bug you can't reproduce, a weakly grounded assumption, a design choice that needs an alternative opinion.
+- Call: invoke `Skill(codex:rescue)` and hand off the context that matters (file paths, line numbers, the specific question).
+- Fold Codex's findings into your work, then continue to step C if the answer conflicts with what you had.
 
-B. 막힘 없이 1차가 매끄럽게 끝난 경우 → `/codex:review`
-- 트리거: 1차 작업/검수가 완료되어 결과물(변경된 코드, 분석 결론 등)이 생긴 상태.
-- 호출: `Skill(codex:review)`로 동일 범위를 Codex에게 독립적으로 검수시킨다.
-- 두 에이전트의 의견을 비교하여 합치되는 지점, 갈리는 지점을 사용자에게 보고한다.
+B. Primary pass finished cleanly → `/codex:review`
+- Trigger: the work is done — there's a concrete artifact (changed code, analysis, conclusion).
+- Call: invoke `Skill(codex:review)` to have Codex independently review the same scope.
+- Compare both agents' findings and report where they agree and disagree.
 
-C. 의견 합의 단계 (`/codex:review` 사용 시 또는 `/codex:rescue` 결과가 1차와 충돌할 때)
-- Claude와 Codex 결론을 나란히 비교한다.
-- 합치되는 부분은 신뢰도 높음으로 표시한다.
-- 갈리는 부분은 각 에이전트의 근거를 정리하고, 어느 쪽이 더 타당한지 판단 근거와 함께 사용자에게 제시한다.
-- 사용자 판단이 필요한 항목은 `AskUserQuestion`으로 묻는다.
+C. Reconciliation (always after `/codex:review`, or after `/codex:rescue` if it contradicts the primary pass)
+- Put Claude's and Codex's conclusions side by side.
+- Mark agreement points as high confidence.
+- For disagreements, lay out each agent's reasoning and present which side looks stronger, with justification.
+- Use `AskUserQuestion` for anything that needs the user to break the tie.
 
-## 운영 규칙
+## Operating rules
 
-- 1차 Claude 작업을 건너뛰지 않는다. Codex에 먼저 던지는 워크플로우가 아니다.
-- A와 B는 배타적이지 않다. 1차 도중 rescue를 쓰고, 완료 후 review로 다시 교차 검증하는 흐름도 정상이다.
-- Codex 응답을 그대로 받아만 두지 말고, 1차 결과와 어떻게 다른지 명시한다.
-- 모든 단계 종료 시 사용자에게: (1) 1차 결과, (2) Codex 결과, (3) 합의 사항/이견을 구분해서 요약한다.
-- 사용자가 명시적으로 한쪽만 원하면(`--rescue-only`, `--review-only`) 해당 단계만 수행한다.
+- Never skip the primary Claude pass. This is not a "send it to Codex first" workflow.
+- A and B are not exclusive: rescue mid-pass and review at the end is a valid sequence.
+- Don't relay Codex's output verbatim — always state how it differs from the primary result.
+- End every run with three labeled sections: (1) primary result, (2) Codex result, (3) agreements and disagreements.
+- If the user explicitly passes `--rescue-only` or `--review-only`, run only that branch.
