@@ -13,3 +13,6 @@ node_modules/
 # Temporary
 *.tmp
 *.bak
+
+# Claude Code local settings (per-machine permissions, not shared)
+.claude/settings.local.json
