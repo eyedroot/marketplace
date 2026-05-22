@@ -1,0 +1,13 @@
+{
+  "name": "with-codex",
+  "description": "Claude 1차 처리 → Codex 교차 검증을 한 줄 명령으로 묶는 듀얼 에이전트 워크플로우. /codex:rescue + /codex:review를 자동 분기.",
+  "version": "0.1.0",
+  "author": {
+    "name": "비즈",
+    "email": "eyedroot@gmail.com",
+    "url": "https://github.com/eyedroot"
+  },
+  "license": "MIT",
+  "keywords": ["codex", "review", "rescue", "dual-agent", "cross-check", "verification", "workflow"],
+  "homepage": "https://github.com/eyedroot/eyedroot-marketplace"
+}

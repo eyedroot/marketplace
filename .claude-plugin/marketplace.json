@@ -21,6 +21,18 @@
         "name": "비즈",
         "email": "eyedroot@gmail.com"
       }
+    },
+    {
+      "name": "with-codex",
+      "source": "./plugins/with-codex",
+      "description": "Claude 1차 처리 → Codex 교차 검증을 /with-codex 한 명령으로 묶는 듀얼 에이전트 워크플로우. /codex:rescue + /codex:review 자동 분기.",
+      "version": "0.1.0",
+      "category": "workflow",
+      "keywords": ["codex", "review", "rescue", "dual-agent", "cross-check", "verification", "workflow"],
+      "author": {
+        "name": "비즈",
+        "email": "eyedroot@gmail.com"
+      }
     }
   ]
 }

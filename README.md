@@ -13,6 +13,13 @@
       - bullet 중심 구조화
       - 두괄식
       - 친근한 대화체 어미
+- `with-codex`
+  - Claude 1차 처리 → Codex 교차 검증을 한 줄 명령으로 묶는 듀얼 에이전트 워크플로우 plugin
+  - 포함 command
+    - `/with-codex`
+      - 1차 Claude 작업
+      - 막히면 `/codex:rescue`, 끝났으면 `/codex:review`로 자동 분기
+      - 두 에이전트 결과 합의/이견을 명시적으로 보고
 
 ## 설치
 
@@ -63,13 +70,19 @@ eyedroot-marketplace/
 │   └── marketplace.json              # 마켓플레이스 메타데이터
 ├── README.md
 └── plugins/
-    └── bullet-style/
+    ├── bullet-style/
+    │   ├── .claude-plugin/
+    │   │   └── plugin.json           # plugin 메타데이터
+    │   ├── README.md
+    │   └── skills/
+    │       └── bullet-notes/
+    │           └── SKILL.md          # claude-code / codex 공용 skill 정의
+    └── with-codex/
         ├── .claude-plugin/
         │   └── plugin.json           # plugin 메타데이터
         ├── README.md
-        └── skills/
-            └── bullet-notes/
-                └── SKILL.md          # claude-code / codex 공용 skill 정의
+        └── commands/
+            └── with-codex.md         # claude-code 슬래시 명령 정의
 ```
 
 ## 호환성 노트
