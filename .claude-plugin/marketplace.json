@@ -14,7 +14,6 @@
       "name": "bullet-style",
       "source": "./plugins/bullet-style",
       "description": "bullet과 indent로 한국어 글을 구조화하는 스타일 plugin. 두괄식 + 친근한 대화체. 기술 노트, 업무 정리, Confluence/Notion 문서 작성에 적용.",
-      "version": "0.1.0",
       "category": "writing",
       "keywords": ["writing", "notes", "korean", "bullet", "indent", "structured", "documentation"],
       "author": {
@@ -26,7 +25,6 @@
       "name": "with-codex",
       "source": "./plugins/with-codex",
       "description": "Claude 1차 처리 → Codex 교차 검증을 /with-codex 한 명령으로 묶는 듀얼 에이전트 워크플로우. /codex:rescue + /codex:review 자동 분기.",
-      "version": "0.1.0",
       "category": "workflow",
       "keywords": ["codex", "review", "rescue", "dual-agent", "cross-check", "verification", "workflow"],
       "author": {
