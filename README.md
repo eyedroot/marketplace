@@ -64,26 +64,16 @@ ln -s /path/to/eyedroot-marketplace/plugins/bullet-style/skills/bullet-notes .ag
 
 ## 디렉토리 구조
 
-```
-eyedroot-marketplace/
-├── .claude-plugin/
-│   └── marketplace.json              # 마켓플레이스 메타데이터
-├── README.md
-└── plugins/
-    ├── bullet-style/
-    │   ├── .claude-plugin/
-    │   │   └── plugin.json           # plugin 메타데이터
-    │   ├── README.md
-    │   └── skills/
-    │       └── bullet-notes/
-    │           └── SKILL.md          # claude-code / codex 공용 skill 정의
-    └── with-codex/
-        ├── .claude-plugin/
-        │   └── plugin.json           # plugin 메타데이터
-        ├── README.md
-        └── commands/
-            └── with-codex.md         # claude-code 슬래시 명령 정의
-```
+- 마켓플레이스 루트
+  - `.claude-plugin/marketplace.json` — 등록된 plugin 목록
+  - `plugins/<plugin>/` — plugin 본체가 들어가는 위치
+- plugin 디렉토리 내부 규칙
+  - `.claude-plugin/plugin.json` — plugin 메타데이터
+  - `README.md` — 설치 안내, 사용법
+  - 구성요소별 디렉토리 (필요한 것만 두면 됨)
+    - `skills/<skill>/SKILL.md` — claude-code · codex 공용 skill
+    - `commands/<command>.md` — claude-code 슬래시 명령
+    - `agents/`, `hooks/`, `mcp/` — 다른 Claude Code 구성요소도 동일 패턴
 
 ## 호환성 노트
 
