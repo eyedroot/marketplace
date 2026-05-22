@@ -14,12 +14,12 @@
       - 두괄식
       - 친근한 대화체 어미
 - `with-codex`
-  - Claude 1차 처리 → Codex 교차 검증을 한 줄 명령으로 묶는 듀얼 에이전트 워크플로우 plugin
-  - 포함 command
+  - Workflow plugin that wraps Claude's primary pass and Codex's cross-verification under one slash command
+  - Included command
     - `/with-codex`
-      - 1차 Claude 작업
-      - 막히면 `/codex:rescue`, 끝났으면 `/codex:review`로 자동 분기
-      - 두 에이전트 결과 합의/이견을 명시적으로 보고
+      - Primary Claude pass
+      - Auto-routes to `/codex:rescue` when stuck, `/codex:review` when done
+      - Reports agreements and disagreements between the two agents explicitly
 
 ## 설치
 

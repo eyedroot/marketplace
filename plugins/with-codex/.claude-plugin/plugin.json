@@ -1,6 +1,6 @@
 {
   "name": "with-codex",
-  "description": "Claude 1차 처리 → Codex 교차 검증을 한 줄 명령으로 묶는 듀얼 에이전트 워크플로우. /codex:rescue + /codex:review를 자동 분기.",
+  "description": "Dual-agent workflow that pairs a Claude primary pass with Codex cross-verification in one command. Auto-routes between /codex:rescue and /codex:review.",
   "version": "0.1.0",
   "author": {
     "name": "비즈",

@@ -24,7 +24,7 @@
     {
       "name": "with-codex",
       "source": "./plugins/with-codex",
-      "description": "Claude 1차 처리 → Codex 교차 검증을 /with-codex 한 명령으로 묶는 듀얼 에이전트 워크플로우. /codex:rescue + /codex:review 자동 분기.",
+      "description": "Dual-agent workflow that pairs a Claude primary pass with Codex cross-verification under one /with-codex command. Auto-routes between /codex:rescue and /codex:review.",
       "category": "workflow",
       "keywords": ["codex", "review", "rescue", "dual-agent", "cross-check", "verification", "workflow"],
       "author": {
