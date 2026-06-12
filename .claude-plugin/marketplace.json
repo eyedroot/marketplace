@@ -13,7 +13,7 @@
     {
       "name": "bullet-style",
       "source": "./plugins/bullet-style",
-      "description": "bullet과 indent로 한국어 글을 구조화하는 스타일 plugin. 두괄식 + 친근한 대화체. 기술 노트, 업무 정리, Confluence/Notion 문서 작성에 적용.",
+      "description": "bullet과 indent로 한국어 글을 구조화하는 스타일 plugin. 두괄식 + 간단명료한 명사형 종결. 기술 노트, 업무 정리, Confluence/Notion 문서 작성에 적용.",
       "category": "writing",
       "keywords": ["writing", "notes", "korean", "bullet", "indent", "structured", "documentation"],
       "author": {

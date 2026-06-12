@@ -12,7 +12,7 @@
     - `bullet-notes`
       - bullet 중심 구조화
       - 두괄식
-      - 친근한 대화체 어미
+      - 간단명료한 명사형 종결 어미
 - `with-codex`
   - Workflow plugin that wraps Claude's primary pass and Codex's cross-verification under one slash command
   - Included command

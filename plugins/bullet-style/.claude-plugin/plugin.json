@@ -1,7 +1,7 @@
 {
   "name": "bullet-style",
   "description": "bullet과 indent로 한국어 글을 구조화하는 스타일 plugin. 정보 전달, 노트, 업무 정리, 기술 문서 작성에 적용.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "비즈",
     "email": "eyedroot@gmail.com",
