@@ -1,0 +1,13 @@
+{
+  "name": "obsidian-notes",
+  "description": "Obsidian 노트를 마크다운 네이티브로 작성하고 도해는 자립형 SVG 파일로 임베드하는 plugin. 옵시디언이 style 태그를 제거해 그림이 검게 나오는 문제를 구조적으로 회피함.",
+  "version": "0.1.0",
+  "author": {
+    "name": "비즈",
+    "email": "eyedroot@gmail.com",
+    "url": "https://github.com/eyedroot"
+  },
+  "license": "MIT",
+  "keywords": ["obsidian", "notes", "markdown", "svg", "diagram", "vault", "documentation", "korean"],
+  "homepage": "https://github.com/eyedroot/marketplace"
+}

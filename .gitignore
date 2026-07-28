@@ -10,6 +10,10 @@
 # Node (혹시 향후 hook 스크립트에서 사용 시)
 node_modules/
 
+# Python (번들 스크립트 실행 시 생성)
+__pycache__/
+*.pyc
+
 # Temporary
 *.tmp
 *.bak

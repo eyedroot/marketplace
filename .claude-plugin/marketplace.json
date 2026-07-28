@@ -31,6 +31,17 @@
         "name": "비즈",
         "email": "eyedroot@gmail.com"
       }
+    },
+    {
+      "name": "obsidian-notes",
+      "source": "./plugins/obsidian-notes",
+      "description": "Obsidian 노트를 마크다운 네이티브로 작성하고 도해는 자립형 SVG 파일로 임베드하는 plugin. 옵시디언이 style 태그를 제거해 그림이 검게 나오는 문제를 구조적으로 회피. SVG 골격 생성, HTML에서 SVG 추출, 노트 검증 스크립트 포함.",
+      "category": "documentation",
+      "keywords": ["obsidian", "notes", "markdown", "svg", "diagram", "vault", "documentation", "korean"],
+      "author": {
+        "name": "비즈",
+        "email": "eyedroot@gmail.com"
+      }
     }
   ]
 }
