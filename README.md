@@ -7,12 +7,13 @@
 ## 포함된 plugin
 
 - `bullet-style`
-  - bullet과 indent로 한국어 글을 구조화하는 스타일 plugin
+  - 별도로 보관할 한국어 노트를 bullet과 indent로 구조화하는 스타일 plugin
   - 포함 skill
     - `bullet-notes`
       - bullet 중심 구조화
       - 두괄식
       - 간단명료한 명사형 종결 어미
+      - codex에서는 스킬을 명시적으로 호출할 때만 적용
 - `with-codex`
   - Workflow plugin that wraps Claude's primary pass and Codex's cross-verification under one slash command
   - Included command
@@ -93,9 +94,8 @@ ln -s /path/to/eyedroot-marketplace/plugins/bullet-style/skills/bullet-notes .ag
   - 필수 필드
     - `name`
     - `description`
-  - claude-code와 codex가 동일 스키마 사용
-    - 양쪽 전용 필드는 현재 시점 기준 없음
-  - 결과적으로 같은 SKILL.md 파일을 양쪽에서 그대로 재사용 가능
+  - claude-code와 codex가 같은 SKILL.md 파일을 재사용
+  - codex 전용 호출 정책은 각 스킬의 `agents/openai.yaml`에서 관리
 - 자동 설치 범위
   - claude-code
     - 마켓플레이스 명령어로 자동 설치
