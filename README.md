@@ -20,6 +20,16 @@
       - Primary Claude pass
       - Auto-routes to `/codex:rescue` when stuck, `/codex:review` when done
       - Reports agreements and disagreements between the two agents explicitly
+- `korean-style`
+  - 한국 개발자가 실제로 쓰는 단어와 문장으로 한국어를 출력하게 만드는 output style plugin
+  - 포함 output style
+    - `plain-korean`
+      - 영어 직역, 공문서 문체, 지나친 압축을 막음
+      - 판단 기준은 "동료에게 말로 설명할 때 그대로 쓸 단어인가" 하나
+  - 포함 스크립트
+    - `check_korean.py`
+      - 막으려는 표현을 문서에서 기계적으로 찾아냄
+      - 오류가 있으면 종료 코드 1을 돌려주므로 훅이나 CI에 걸 수 있음
 
 ## 설치
 

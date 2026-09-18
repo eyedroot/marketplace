@@ -1,0 +1,13 @@
+{
+  "name": "korean-style",
+  "description": "한국 개발자가 실제로 쓰는 단어와 문장으로 한국어를 출력하게 만드는 output style plugin. 영어 직역, 공문서 문체, 지나친 압축을 막고 검사 스크립트로 확인한다.",
+  "version": "0.1.0",
+  "author": {
+    "name": "비즈",
+    "email": "eyedroot@gmail.com",
+    "url": "https://github.com/eyedroot"
+  },
+  "license": "MIT",
+  "keywords": ["korean", "writing", "output-style", "style", "translation", "wording", "linter", "documentation"],
+  "homepage": "https://github.com/eyedroot/eyedroot-marketplace"
+}
