@@ -1,7 +1,7 @@
 {
   "name": "korean-style",
-  "description": "한국 개발자가 실제로 쓰는 단어와 문장으로 한국어를 출력하게 만드는 output style plugin. 영어 직역, 공문서 문체, 지나친 압축을 막고 검사 스크립트로 확인한다.",
-  "version": "0.1.0",
+  "description": "공적인 문서의 어휘와 지나친 압축을 걷어내고, 동료에게 말하듯 읽히는 한국어를 쓰게 만드는 output style plugin. 금지어 목록 대신 판단 기준을 두고, 문장 구조는 check_korean.py로 센다.",
+  "version": "0.2.0",
   "author": {
     "name": "비즈",
     "email": "eyedroot@gmail.com",
